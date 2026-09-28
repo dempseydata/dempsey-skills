@@ -1,0 +1,27 @@
+{
+  "name": "dempsey-skills",
+  "version": "0.4.0",
+  "description": "Claude Code skills for ideating, diagramming, pre-deploy security checks and unattended ticket runs. Originals and attributed forks.",
+  "author": {
+    "name": "Andrew Dempsey",
+    "url": "https://github.com/dempseydata"
+  },
+  "repository": "https://github.com/dempseydata/dempsey-skills",
+  "license": "SEE LICENSE IN README.md",
+  "keywords": [
+    "brainstorming",
+    "ideation",
+    "product",
+    "creativity",
+    "diagrams",
+    "security",
+    "orchestration"
+  ],
+  "skills": [
+    "./skills/brainstorm",
+    "./skills/archify",
+    "./skills/excalidraw-diagram",
+    "./skills/security-preflight",
+    "./skills/mp-night-shift"
+  ]
+}
