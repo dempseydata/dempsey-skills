@@ -34,7 +34,7 @@ Easy-to-reverse choices are not gaps; leave them out.
 
 Report each gap in under 80 words: the question; the producing and consuming tickets; two or
 three options with your recommendation first; why it is hard to reverse. Then list any ticket
-whose acceptance criteria need a human to judge or run.
+whose building needs a human, and any whose criteria need a human to judge or run.
 ```
 
 ## Implementer

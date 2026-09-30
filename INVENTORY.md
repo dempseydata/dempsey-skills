@@ -4,7 +4,7 @@ What is in this plugin, where each piece came from, what was changed on the way 
 refresh it later. Keep this current — it is the only record of provenance, because folding a
 skill in here severs it from whatever update mechanism it shipped with.
 
-Last reviewed: **2026-09-28** · plugin version **0.4.0**
+Last reviewed: **2026-09-28** · plugin version **0.4.1**
 
 | Skill | Origin | Pinned at | Licence | Files | Size | Local mods |
 | --- | --- | --- | --- | --- | --- | --- |

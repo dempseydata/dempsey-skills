@@ -17,7 +17,7 @@ Run every row. A failed row becomes a question for the sitting.
 | Guards hold | Hooks the project configures are active (`git config core.hooksPath`, `.githooks/`, husky). What `CLAUDE.md` claims they enforce, they do enforce | A guard claimed but missing fails silently until publication |
 | Ticket set | **GitHub:** the spec's sub-issues (`gh api repos/<owner>/<repo>/issues/<n>/sub_issues`), else its task list. **`.scratch`:** `.scratch/<feature>/issues/*.md` | The shift works the spec's tickets and nothing else |
 | Blocking edges | Per the tracker file's **Blocking** operation. Order the tickets topologically. A cycle is a question | The frontier needs them |
-| Agent or human | A `ready-for-human` label or `Status:` line makes a ticket human. Otherwise read its criteria: any that need a person's judgement, taste, or a manual run make it human. Unsure means ask. Criteria missing altogether means ask | Human tickets are excluded up front, not discovered at the end |
+| Agent, human-verified, or human | A `ready-for-human` label or `Status:` line makes a ticket **human**: the shift skips it. A `ready-for-agent` ticket whose building an agent can do, but some of whose criteria need a person to judge or run, is **human-verified**: the shift builds it and leaves it open (step 7). Otherwise it is **agent**. Unsure means ask. Criteria missing altogether means ask | Human work is excluded up front; human verification is scheduled, not discovered at the end |
 | Binding sources | Collect every ADR, closed issue, decision ticket and doc that the spec and tickets cite. Precedence: ADRs, then closed decision tickets, then the spec, then briefs and background only where the others are silent | Implementers who skip a decision ticket build against the wrong rule |
 | Tools | Every CLI and binary the spec or tickets name is installed (`command -v`) | A missing tool surfaces mid-ticket as a confusing failure |
 | Baseline suite | Find the test command. It passes. Record the test count and duration. No suite means ask | Red-to-green needs a green start; duration growth needs a baseline |
@@ -48,7 +48,7 @@ Easy-to-reverse choices are not gaps. Implementers make those and record them.
 ## Report
 
 Present these to the user, then move to the sitting:
-- the ticket table: order, agent or human, blocking edges;
+- the ticket table: order, class (agent, human-verified or human), blocking edges;
 - the binding sources, in precedence order;
 - each check's result;
 - the gaps, each with its recommendation.

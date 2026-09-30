@@ -16,7 +16,7 @@ Input: the spec (an issue number, or `.scratch/<feature>/spec.md`), and optional
 
 Run [references/prescan.md](references/prescan.md).
 
-Done when the prescan report classes every ticket as agent or human with its blocking edges, lists the binding sources, records every mechanical check, and gives every decision gap a recommended answer.
+Done when the prescan report classes every ticket as agent, human-verified or human, with its blocking edges, lists the binding sources, records every mechanical check, and gives every decision gap a recommended answer.
 
 ## 2. Decision sitting
 
