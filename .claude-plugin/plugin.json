@@ -1,6 +1,6 @@
 {
   "name": "dempsey-skills",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Claude Code skills for ideating, diagramming, pre-deploy security checks and unattended ticket runs. Originals and attributed forks.",
   "author": {
     "name": "Andrew Dempsey",

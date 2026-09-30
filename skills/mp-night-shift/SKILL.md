@@ -32,7 +32,7 @@ Done when every gap is answered and recorded, and authority and end state are ex
 
 ## 3. Set up
 
-From a clean default branch, create `night-shift/<spec-slug>` (or the name the user gives). Create the ledger at `.scratch/night-shift/<spec-slug>.md` in the format under **Ledger** below. Commit the ADRs and the ledger as the shift's first commit.
+From a clean default branch, create `night-shift/<spec-slug>` (or the name the user gives). Create the ledger at `docs/build-ledgers/<spec-slug>.md`, beside the project's other records, in the format under **Ledger** below. Commit the ADRs and the ledger as the shift's first commit.
 
 If a ledger for this spec already exists on its branch, the shift is **resuming**: check out that branch, read the ledger and the tracker, and go straight to the shift.
 
@@ -119,7 +119,7 @@ Each implementer reports the decisions no binding source made. Each one goes int
 ## Ledger
 
 ```markdown
-# Night shift: <spec> — branch <branch>
+# Build ledger: <spec> — branch <branch>
 
 Authority: push + tracker <yes|no> · End state: <branch only | merge + push> · Baseline: <n> tests, <t> s
 
