@@ -1,7 +1,8 @@
 # dempsey-skills
 
 Five Claude Code skills for solo builders: a security check before you deploy, an unattended
-build of a ticketed spec, facilitated brainstorming, and two ways to draw diagrams.
+build of a ticketed spec, facilitated brainstorming, and two ways to draw diagrams. Also hosts
+six mods — small Claude Code UI add-ons — as separate plugins in the same marketplace.
 
 | Skill | Use it when |
 | --- | --- |
@@ -12,7 +13,8 @@ build of a ticketed spec, facilitated brainstorming, and two ways to draw diagra
 | [`excalidraw-diagram`](#excalidraw-diagram) | You want a hand-drawn diagram that makes one point |
 
 The first two are mine. The other three are other people's skills, adapted and credited under
-[Credits and licences](#credits-and-licences).
+[Credits and licences](#credits-and-licences). The [mods](#mods) are a maintained fork of someone
+else's work too — see [Mods: credits and licence](#mods-credits-and-licence).
 
 ## Install
 
@@ -119,6 +121,39 @@ export UV_PROJECT_ENVIRONMENT=~/.claude/excalidraw-diagram/.venv
 uv sync && uv run playwright install chromium
 ```
 
+## Mods
+
+Six small Claude Code mods — UI add-ons that change what you see while you work, rather than
+things you invoke. Each is its own plugin in this marketplace, so they install and update
+separately from `dempsey-skills` and from each other. A maintained fork of
+[Ben AI](https://www.benai.co)'s original nine-mod set, trimmed to the six worth keeping, with
+fixes applied to each — see [Mods: credits and licence](#mods-credits-and-licence).
+
+| Mod | What it does |
+| --- | --- |
+| `helper-desk` | A purple task bar above the prompt that fills as Claude ticks off its to-do list, plus a side pane with one live card per subagent. |
+| `cache-clock` | Counts down above the prompt until the chat's cache goes cold, with a Keep warm button. |
+| `handoff` | At a configurable token threshold (default 250k), offers Refresh: writes a handoff of the whole chat and starts a fresh chat with it. |
+| `reflect` | When you correct Claude, offers to save the fix as a lasting rule — to `CLAUDE.md`, to the current project, or to a rules folder you choose. |
+| `chat-inventory` | A side pane, In this chat, listing the to-do list, connectors, files and skills this chat used. |
+| `mods` | `/mods` opens a pane to turn each mod on or off, including ones installed from any other marketplace. |
+
+### Install
+
+```bash
+claude plugin install helper-desk@dempsey
+claude plugin install cache-clock@dempsey
+claude plugin install handoff@dempsey
+claude plugin install reflect@dempsey
+claude plugin install chat-inventory@dempsey
+claude plugin install mods@dempsey
+```
+
+(Needs `claude plugin marketplace add dempseydata/dempsey-skills` first, same as above, if you
+haven't already added the marketplace.) Update each with
+`claude plugin update <mod>@dempsey`, then `/reload-plugins` in any chat that was already open.
+Type `/mods` to turn any of them on or off per chat.
+
 ## Credits and licences
 
 | Skill | Source | Pinned at | Licence |
@@ -138,6 +173,20 @@ records what was changed in each skill and how to refresh it.
 
 This `brainstorm` is not affiliated with BMad Code, LLC. BMad™, BMAD-CORE™ and BMAD-METHOD™ are
 their trademarks, used here only for credit.
+
+## Mods: credits and licence
+
+| Mod | Source | Licence |
+| --- | --- | --- |
+| `helper-desk`, `cache-clock`, `handoff`, `reflect`, `chat-inventory`, `mods` | [Ben AI](https://www.benai.co), a nine-mod set | **None stated** |
+
+**No licence is stated upstream.** Ben AI's mods carry an `author` field in each `plugin.json`
+but no `LICENSE` file and no stated terms. Three of the original nine (`brain-dump`,
+`screen-share`, `replay-theater`) were dropped rather than carried over; `replay-theater` was
+itself Anthropic's Apache-2.0-licensed sample mod with one addition, not Ben AI's own work, which
+is a separate reason it isn't here. The six kept here have real fixes applied on top — see each
+mod's own `register.tsx` for what changed — but the underlying mods, and credit for the original
+idea and implementation, are Ben AI's.
 
 ## Contributing
 
