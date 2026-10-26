@@ -9,7 +9,7 @@ six mods — small Claude Code UI add-ons — as separate plugins in the same ma
 | [`security-preflight`](#security-preflight) | You're about to deploy something you built alone |
 | [`mp-night-shift`](#mp-night-shift) | A spec's tickets are ready and you're about to walk away. Built for [Matt Pocock's skills](https://github.com/mattpocock/skills) |
 | [`brainstorm`](#brainstorm) | You have a rough idea and want more options before choosing one |
-| [`archify`](#archify) | You need an architecture, sequence or data-flow diagram |
+| [`archify`](#archify) | You need an architecture, sequence, data-flow or other technical diagram |
 
 The first two are mine. The other two are other people's skills, adapted and credited under
 [Credits and licences](#credits-and-licences). The [mods](#mods) are a maintained fork of someone
@@ -93,7 +93,8 @@ to `~/.claude/brainstorm/techniques.csv` on first run, and from then on it's you
 ### archify
 
 **For** technical diagrams: architecture, workflows, API sequences, data pipelines, state
-machines. It works from a plain description, pasted Mermaid, or your actual repository.
+machines, ERDs, class diagrams, trees, timelines and waterfalls, plus one-page explainers. It
+works from a plain description, pasted Mermaid, or your actual repository.
 
 **Try** "draw the architecture of this repo".
 
@@ -141,7 +142,7 @@ Type `/mods` to turn any of them on or off per chat.
 | --- | --- | --- | --- |
 | `security-preflight`, `mp-night-shift` | Original | — | [MIT](LICENSE) |
 | `brainstorm` | Fork of `bmad-brainstorming` from [BMad CIS](https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite) | BMAD v6.9.0 | [MIT](skills/brainstorm/LICENSE), © BMad Code, LLC |
-| `archify` | [tt-a1i/archify](https://github.com/tt-a1i/archify) | `v2.17.0-dev.1` | [MIT](skills/archify/LICENSE), © tt-a1i |
+| `archify` | [tt-a1i/archify](https://github.com/tt-a1i/archify) | `v3.2.0` | [MIT](skills/archify/LICENSE), © tt-a1i |
 
 The adapted copies don't update themselves. If you only want archify, install it from upstream
 (`npx skills add tt-a1i/archify -g`) and you'll get its updates. [INVENTORY.md](INVENTORY.md)

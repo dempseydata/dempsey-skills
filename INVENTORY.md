@@ -4,12 +4,12 @@ What is in this plugin, where each piece came from, what was changed on the way 
 refresh it later. Keep this current — it is the only record of provenance, because folding a
 skill in here severs it from whatever update mechanism it shipped with.
 
-Last reviewed: **2026-10-26** · plugin version **0.5.0**
+Last reviewed: **2026-10-26** · plugin version **0.6.0**
 
 | Skill | Origin | Pinned at | Licence | Files | Size | Local mods |
 | --- | --- | --- | --- | --- | --- | --- |
 | `brainstorm` | [bmad-code-org/bmad-module-creative-intelligence-suite](https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite), skill `bmad-brainstorming` (installed via `npx bmad-method install`, BMAD v6.9.0) | forked 2026-09-06 | MIT, © BMad Code, LLC | 14 | 172K | **Extensive — a fork, not a copy** |
-| `archify` | [tt-a1i/archify](https://github.com/tt-a1i/archify) | `v2.17.0-dev.1` (development channel) | MIT | 194 | 7.4M | 3 files, path rewrites |
+| `archify` | [tt-a1i/archify](https://github.com/tt-a1i/archify) | `v3.2.0` (stable, refreshed 2026-10-26) | MIT | 203 | 17M | 4 files, path rewrites |
 | `security-preflight` | Original, no upstream | — | MIT | 1 | 8.0K | none — verbatim |
 | `mp-night-shift` | Original, no upstream | — | MIT | 4 | 24K | none — original |
 
@@ -72,20 +72,28 @@ Upstream ships **no plugin manifest** — no `.claude-plugin/`, `marketplace.jso
 `https://tt-a1i.github.io/archify/skill-updates/archify/stable.json`. That is consumed by the
 `skills` CLI, not by Claude Code. It is left in place as a provenance record; it does nothing here.
 
-**Local mods to re-apply after any refresh** — 16 occurrences across 3 files:
+**Licence: pinned before a change.** Upstream moved to Apache-2.0 on 2026-10-18, in the commits
+after `v3.2.0`, and kept the earlier MIT grants. `v3.2.0` is the last MIT release. Any later
+refresh brings Apache-2.0 with it. You then have to copy `NOTICE` and `LICENSE-MIT` into the
+skill folder, keep `NOTICE` intact, record the local changes, and set `plugin.json`'s
+`license` back to a mixed value.
+
+**Local mods to re-apply after any refresh** — 19 occurrences across 4 files:
 
 ```bash
 # from skills/archify/
-for f in SKILL.md references/brand-marks.md references/delivery-contract.md; do
+for f in SKILL.md references/brand-marks.md references/delivery-contract.md brand-marks/README.md; do
   sed -i '' 's|node bin/archify\.mjs|node {skill-dir}/bin/archify.mjs|g' "$f"
 done
 ```
 
 Plus the `## Paths` section inserted after the `# Archify` heading in `SKILL.md`. Both exist
-because upstream assumes cwd is the skill directory, which is false for a plugin skill.
+because upstream assumes cwd is the skill directory, which is false for a plugin skill. Since
+v3, upstream's own `SKILL.md` tells the model to swap in the package's absolute path. That
+makes the mods partly redundant, but they're kept because they cost nothing.
 
 **Runtime:** Node ≥ 18, and **no `npm install`**. The `devDependencies` in `package.json`
-(ajv, parse5, saxes, simple-icons) serve the upstream test suite only. Verify with
+(ajv, simple-icons) serve the upstream test suite only. Verify with
 `node skills/archify/bin/archify.mjs doctor` from any directory — it should end "Archify is ready."
 
 **Known upstream defect, not introduced here:** `package.json`'s npm scripts reference
@@ -95,11 +103,13 @@ because upstream assumes cwd is the skill directory, which is false for a plugin
 **Refresh:**
 
 ```bash
-npx skills add tt-a1i/archify -g          # lands in ~/.claude/skills/archify
-diff -rq --exclude=.git ~/.claude/skills/archify skills/archify
-# copy across, re-apply the sed above, re-add the Paths section, then:
-rm -rf ~/.claude/skills/archify           # never leave a duplicate — it double-triggers
+git clone https://github.com/tt-a1i/archify <scratch>/archify && git -C <scratch>/archify checkout <tag>
+diff -rq <scratch>/archify/archify skills/archify     # the skill is the archify/ subfolder of a monorepo
+# replace skills/archify with that subfolder, re-apply the sed above, re-add the Paths section
 ```
+
+Don't use `npx skills add … -g`. It installs a second copy into `~/.claude/skills/`, and the two
+copies both trigger.
 
 ## security-preflight
 
