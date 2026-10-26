@@ -30,8 +30,6 @@ type Row = { name: string; title: string; what: string; pane: boolean; hide: boo
 const MODS: readonly Mod[] = [
   { name: 'cache-clock', what: 'Counts down until the cache goes cold', pane: false, hide: true, ask: false, tip: '/cacheclock to show or hide' },
   { name: 'handoff', title: 'Handoff (Refresh)', what: 'Moves a long chat to a fresh one', pane: false, hide: true, ask: true, tip: '/refresh to show it' },
-  { name: 'screen-share', what: 'Hides emails, phones and amounts on screen', pane: false, hide: false, ask: false, tip: '/screen-share to hide private data' },
-  { name: 'brain-dump', title: 'Brain-Dump Shaper', what: 'Turns long rambling prompts into clear briefs', pane: false, hide: false, ask: false },
   { name: 'reflect', what: 'Saves your corrections as lasting rules', pane: false, hide: false, ask: false },
   { name: 'helper-desk', what: 'Task progress bar above the prompt, plus a card per subagent', pane: true, hide: true, ask: true },
   { name: 'chat-inventory', what: 'Connectors, files and skills this chat used', pane: true, hide: true, ask: true },

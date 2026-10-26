@@ -42,9 +42,8 @@ for (const surface of ['desktop', 'terminal'] as const) {
     expect(await v.find({ text: /Off means off in every chat\. Hidden keeps it on but out of sight\. Changes apply within 3 seconds\./ }), 'footer').toBeDefined()
     expect(await v.find({ text: 'New mods appear here by themselves.' }), 'footer line on new mods').toBeDefined()
     expect(await v.find({ text: 'Helper Desk' }), 'Helper Desk keeps its name').toBeDefined()
-    expect(await v.find({ key: 'show-brain-dump' }), 'no Shown/Hidden on brain-dump').toBeUndefined()
+    expect(await v.find({ key: 'show-reflect' }), 'no Shown/Hidden on reflect').toBeUndefined()
     expect(await v.find({ text: '/cacheclock to show or hide' }), 'tip under Cache Clock').toBeDefined()
-    expect(await v.find({ text: '/screen-share to hide private data' }), 'tip under Screen-Share').toBeDefined()
 
     // Cache Clock: On to Off writes the whole file with its key set to false.
     await v.press({ key: 'toggle-cache-clock' })
@@ -255,13 +254,13 @@ for (const surface of ['desktop', 'terminal'] as const) {
     expect(await v.find({ text: 'long text' }), 'and its known description').toBeUndefined()
     expect(await v.find({ key: 'open-helper-desk' }), 'and its Open button').toBeDefined()
     expect(await v.find({ key: 'show-cache-clock' }), 'Cache Clock keeps Shown/Hidden').toBeDefined()
-    expect(await v.find({ key: 'toggle-brain-dump' }), 'Brain-Dump keeps On/Off').toBeDefined()
+    expect(await v.find({ key: 'toggle-reflect' }), 'Reflect keeps On/Off').toBeDefined()
     expect(await v.find({ key: 'show-zeta-notes' }), 'a new mod has no Shown/Hidden').toBeUndefined()
 
     // Order: the old table, then new ones A to Z, then this chat's own.
     const order = (await v.findAll({ type: 'Box' })).map(b => b.key ?? '').filter(k => k.startsWith('row-')).map(k => k.slice(4))
-    expect(order.slice(0, 7), 'old table first').toEqual(['cache-clock', 'handoff', 'screen-share', 'brain-dump', 'reflect', 'helper-desk', 'chat-inventory'])
-    expect(order.slice(7), 'then A to Z, then this chat only').toEqual(['alpha-env', 'plain-tool', 'replay-theater', 'zeta-notes', 'brand-new'])
+    expect(order.slice(0, 5), 'old table first').toEqual(['cache-clock', 'handoff', 'reflect', 'helper-desk', 'chat-inventory'])
+    expect(order.slice(5), 'then A to Z, then this chat only').toEqual(['alpha-env', 'plain-tool', 'replay-theater', 'zeta-notes', 'brand-new'])
 
     // A found mod switches like a known one.
     await v.press({ key: 'toggle-zeta-notes' })

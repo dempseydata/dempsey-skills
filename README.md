@@ -134,7 +134,7 @@ claude plugin install mods@dempsey
 (Needs `claude plugin marketplace add dempseydata/dempsey-skills` first, same as above, if you
 haven't already added the marketplace.) Update each with
 `claude plugin update <mod>@dempsey`, then `/reload-plugins` in any chat that was already open.
-Type `/mods` to turn any of them on or off per chat.
+Type `/mods` to turn any of them on or off. A switch applies in every chat, not just the current one.
 
 ## Credits and licences
 
@@ -159,7 +159,8 @@ their trademarks, used here only for credit.
 
 **No licence is stated upstream.** Ben AI's mods carry an `author` field in each `plugin.json`
 but no `LICENSE` file and no stated terms. Three of the original nine (`brain-dump`,
-`screen-share`, `replay-theater`) were dropped rather than carried over; `replay-theater` was
+`screen-share`, `replay-theater`) were dropped rather than carried over, and the `/mods` pane
+no longer lists them. `replay-theater` was
 itself Anthropic's Apache-2.0-licensed sample mod with one addition, not Ben AI's own work, which
 is a separate reason it isn't here. The six kept here have real fixes applied on top — see each
 mod's own `register.tsx` for what changed — but the underlying mods, and credit for the original
