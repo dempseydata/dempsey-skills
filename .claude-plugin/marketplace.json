@@ -10,7 +10,7 @@
     {
       "name": "dempsey-skills",
       "source": "./",
-      "description": "Brainstorm (a BMad CIS fork around a user-owned technique catalog), archify and excalidraw diagrams, security-preflight, and mp-night-shift for unattended ticket runs.",
+      "description": "Brainstorm (a BMad CIS fork around a user-owned technique catalog), archify diagrams, security-preflight, and mp-night-shift for unattended ticket runs.",
       "category": "productivity",
       "keywords": [
         "brainstorming",

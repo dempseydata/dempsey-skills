@@ -1,7 +1,7 @@
 # dempsey-skills
 
-Five Claude Code skills for solo builders: a security check before you deploy, an unattended
-build of a ticketed spec, facilitated brainstorming, and two ways to draw diagrams. Also hosts
+Four Claude Code skills for solo builders: a security check before you deploy, an unattended
+build of a ticketed spec, facilitated brainstorming, and architecture diagrams. Also hosts
 six mods — small Claude Code UI add-ons — as separate plugins in the same marketplace.
 
 | Skill | Use it when |
@@ -10,9 +10,8 @@ six mods — small Claude Code UI add-ons — as separate plugins in the same ma
 | [`mp-night-shift`](#mp-night-shift) | A spec's tickets are ready and you're about to walk away. Built for [Matt Pocock's skills](https://github.com/mattpocock/skills) |
 | [`brainstorm`](#brainstorm) | You have a rough idea and want more options before choosing one |
 | [`archify`](#archify) | You need an architecture, sequence or data-flow diagram |
-| [`excalidraw-diagram`](#excalidraw-diagram) | You want a hand-drawn diagram that makes one point |
 
-The first two are mine. The other three are other people's skills, adapted and credited under
+The first two are mine. The other two are other people's skills, adapted and credited under
 [Credits and licences](#credits-and-licences). The [mods](#mods) are a maintained fork of someone
 else's work too — see [Mods: credits and licence](#mods-credits-and-licence).
 
@@ -103,24 +102,6 @@ to PNG, SVG or video. Works offline.
 
 **Needs** Node 18+.
 
-### excalidraw-diagram
-
-**For** diagrams built to make one point, in Excalidraw's hand-drawn style.
-
-**Try** "make an Excalidraw diagram of our onboarding flow".
-
-**You get** an `.excalidraw` file you can open at [excalidraw.com](https://excalidraw.com).
-Claude renders it and checks the result before handing it over.
-
-**Needs** `uv`, a network connection for every render, and this one-time setup (it creates a
-146 MB environment outside the plugin):
-
-```bash
-cd <skill-dir>/references
-export UV_PROJECT_ENVIRONMENT=~/.claude/excalidraw-diagram/.venv
-uv sync && uv run playwright install chromium
-```
-
 ## Mods
 
 Six small Claude Code mods — UI add-ons that change what you see while you work, rather than
@@ -161,11 +142,6 @@ Type `/mods` to turn any of them on or off per chat.
 | `security-preflight`, `mp-night-shift` | Original | — | [MIT](LICENSE) |
 | `brainstorm` | Fork of `bmad-brainstorming` from [BMad CIS](https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite) | BMAD v6.9.0 | [MIT](skills/brainstorm/LICENSE), © BMad Code, LLC |
 | `archify` | [tt-a1i/archify](https://github.com/tt-a1i/archify) | `v2.17.0-dev.1` | [MIT](skills/archify/LICENSE), © tt-a1i |
-| `excalidraw-diagram` | [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill) | `8646fcc` | **None stated** |
-
-**excalidraw-diagram has no stated licence.** As of 2026-09-28 upstream has no `LICENSE` file
-and its README says nothing, so no redistribution rights have been granted. Check upstream in
-case one has been added since. If in doubt, install it from there directly.
 
 The adapted copies don't update themselves. If you only want archify, install it from upstream
 (`npx skills add tt-a1i/archify -g`) and you'll get its updates. [INVENTORY.md](INVENTORY.md)
