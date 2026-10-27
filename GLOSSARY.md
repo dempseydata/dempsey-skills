@@ -33,13 +33,3 @@ _Avoid_: Heartbeat, cache ping
 **Break-even stop**:
 The point at which Keep warm stops by itself: when the pings so far have cost as much as one cold re-write of the context would.
 _Avoid_: Timeout, ping cap
-
-### Memory
-
-**Memory candidate**:
-A statement from the conversation detected as worth keeping as a standing instruction. "NewMem" is the label of the section that counts them, not a name for the thing.
-_Avoid_: NewMem, reflection, lesson
-
-**Memory destination**:
-Where an accepted memory candidate is written: Everywhere or This project. Claude Code's own auto-memory is never a destination.
-_Avoid_: Target, scope
