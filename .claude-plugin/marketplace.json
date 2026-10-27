@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "dempsey",
-  "description": "Andrew Dempsey's Claude Code skills and mods.",
+  "description": "Andrew Dempsey's Claude Code skills.",
   "owner": {
     "name": "Andrew Dempsey",
     "url": "https://github.com/dempseydata"
@@ -19,48 +19,6 @@
         "security",
         "orchestration"
       ]
-    },
-    {
-      "name": "helper-desk",
-      "source": "./mods/helper-desk",
-      "description": "Helper Desk: a purple task progress bar above the prompt that moves as each to-do item is done, and a side pane with one live card per subagent. Originally from Ben AI (benai.co).",
-      "category": "productivity",
-      "keywords": ["mod", "productivity"]
-    },
-    {
-      "name": "cache-clock",
-      "source": "./mods/cache-clock",
-      "description": "Counts down until the chat's prompt cache goes cold, above the prompt, with a Keep warm button. Originally from Ben AI (benai.co).",
-      "category": "productivity",
-      "keywords": ["mod", "productivity"]
-    },
-    {
-      "name": "handoff",
-      "source": "./mods/handoff",
-      "description": "At a configurable token threshold (default 250k), offers Refresh: writes a handoff of the whole chat and starts a fresh chat with it. Originally from Ben AI (benai.co).",
-      "category": "productivity",
-      "keywords": ["mod", "productivity"]
-    },
-    {
-      "name": "reflect",
-      "source": "./mods/reflect",
-      "description": "When you correct Claude, offers to save the fix as a lasting rule in CLAUDE.md, in the current project, or in a rules folder you choose. Originally from Ben AI (benai.co).",
-      "category": "productivity",
-      "keywords": ["mod", "productivity"]
-    },
-    {
-      "name": "chat-inventory",
-      "source": "./mods/chat-inventory",
-      "description": "A side pane, In this chat, that lists the to-do list, connectors, context files and skills this chat used. Originally from Ben AI (benai.co).",
-      "category": "productivity",
-      "keywords": ["mod", "productivity"]
-    },
-    {
-      "name": "mods",
-      "source": "./mods/switchboard",
-      "description": "A Mods pane that finds every mod on this Mac by itself, also the ones installed from a marketplace, turns each one on or off in every chat, and opens the side-pane ones. Originally from Ben AI (benai.co).",
-      "category": "productivity",
-      "keywords": ["mod", "productivity"]
     }
   ]
 }
