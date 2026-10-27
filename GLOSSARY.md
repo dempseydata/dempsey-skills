@@ -41,5 +41,5 @@ A statement from the conversation detected as worth keeping as a standing instru
 _Avoid_: NewMem, reflection, lesson
 
 **Memory destination**:
-Where an accepted memory candidate is written: Everywhere, This project, or Remember.
+Where an accepted memory candidate is written: Everywhere or This project. Claude Code's own auto-memory is never a destination.
 _Avoid_: Target, scope
