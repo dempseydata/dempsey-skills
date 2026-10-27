@@ -19,7 +19,7 @@ One collapsible part of the ModDash pane, showing a summary when collapsed and d
 _Avoid_: Panel, widget, tab
 
 **Day chart**:
-Tokens per hour across all of today's sessions, stacked by session.
+Tokens per hour, counting every token that draws on usage limits (cache reads included), across all of today's sessions, stacked by session.
 _Avoid_: Usage graph, history
 
 **Context alert**:
