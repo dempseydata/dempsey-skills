@@ -27,8 +27,12 @@ The warning that a session's context has crossed its threshold.
 _Avoid_: Context warning, token alarm
 
 **Keep warm**:
-Pinging a session so its prompt cache does not expire.
+Pinging a session so its prompt cache does not expire. Offered only for the session the pane belongs to, off until switched on.
 _Avoid_: Heartbeat, cache ping
+
+**Break-even stop**:
+The point at which Keep warm stops by itself: when the pings so far have cost as much as one cold re-write of the context would.
+_Avoid_: Timeout, ping cap
 
 ### Memory
 
