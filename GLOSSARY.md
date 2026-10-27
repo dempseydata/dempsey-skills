@@ -18,6 +18,10 @@ _Avoid_: Dashboard mod, cockpit
 One collapsible part of the ModDash pane, showing a summary when collapsed and detail when expanded.
 _Avoid_: Panel, widget, tab
 
+**Progress**:
+The Section showing how far the session's to-do list has got, with its subagents counted beneath as running, done or failed.
+_Avoid_: (Sub)Agents, task bar
+
 **Day chart**:
 Tokens per hour, counting every token that draws on usage limits (cache reads included), across all of today's sessions, stacked by session.
 _Avoid_: Usage graph, history
