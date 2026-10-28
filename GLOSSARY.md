@@ -7,7 +7,7 @@ Skills and mods for Claude Code, published through the `dempsey` marketplace.
 ### Mods
 
 **Mod**:
-A plugin that changes Claude Code's own interface or behaviour (a pane, band, status line or hook), as opposed to a skill.
+A plugin with a hooks module, changing Claude Code's own interface or behaviour (a pane, band, status line or hook), as opposed to a skill or a plugin of command hooks only.
 _Avoid_: Extension, add-on
 
 **ModDash**:
@@ -17,6 +17,10 @@ _Avoid_: Dashboard mod, cockpit
 **Section**:
 One collapsible part of the ModDash pane, showing a summary when collapsed and detail when expanded.
 _Avoid_: Panel, widget, tab
+
+**Mods** (Section):
+The Section listing the other installed mods, each with a switch to turn it on or off; absent when there are none.
+_Avoid_: Plugins Section, switchboard
 
 **Progress**:
 The Section showing how far the session's to-do list has got, with its subagents counted beneath as running, done or failed.
